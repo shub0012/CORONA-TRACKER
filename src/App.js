@@ -2,13 +2,12 @@ import React from 'react'
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
   } from "react-router-dom"
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navbar,Nav,Form,FormControl,Button} from 'react-bootstrap'
+import {Navbar,Nav} from 'react-bootstrap'
 
 
 import { Cards,Chart,CountryPicker,InCards,StatePicker,InChart, InTestingCard,TestingChart,HospitalCard,StateHospitalPicker,PieHospital,ContactCard,StateContactPicker,StateContactCard } from "./components";
@@ -161,7 +160,7 @@ class App extends React.Component{
                     <Switch>
                         <Route path="/india">
                             <div className={styles.container}>
-                                    <img className={styles.image} src={mainImage} alt="corono image" />
+                                    <img className={styles.image} src={mainImage} alt="corono" />
                                     <InCards data={indata} />
                                     <StatePicker handleStateChange={this.handleStateChange} />
                                     <InChart data={stateData} loc={loc} />
@@ -169,14 +168,14 @@ class App extends React.Component{
                         </Route>
                         <Route path="/indiatesting">
                             <div className={styles.container}>
-                                <img className={styles.image} src={mainImage} alt="corono image" />
+                                <img className={styles.image} src={mainImage} alt="corono " />
                                 <InTestingCard data={testResult}/>
                                 <TestingChart data={testResult} />
                             </div>
                         </Route>
                         <Route path="/hospitalstats">
                             <div className={styles.container}>
-                                    <img className={styles.image} src={mainImage} alt="corono image" />
+                                    <img className={styles.image} src={mainImage} alt="corono " />
                                     <HospitalCard data={stateDataHospital} />
                                     <StateHospitalPicker handleStateHospitalChange={this.handleStateHospitalChange} />
                                     <PieHospital  data={stateDataHospital}/>      
@@ -184,7 +183,7 @@ class App extends React.Component{
                         </Route>
                         <Route path="/contact">
                             <div className={styles.container}>
-                                    <img className={styles.image} src={mainImage} alt="corono image" /> 
+                                    <img className={styles.image} src={mainImage} alt="corono " /> 
                                     <ContactCard data={primaryContact} />
                                     <StateContactPicker handleStateContactChange={this.handleStateContactChange} />
                                     <StateContactCard data={stateContact} />
@@ -192,7 +191,7 @@ class App extends React.Component{
                         </Route>
                         <Route path="/">
                             <div className={styles.container}>
-                                <img className={styles.image} src={mainImage} alt="corono image" />
+                                <img className={styles.image} src={mainImage} alt="corono " />
                                 <Cards data={data}/>
                                 <CountryPicker handleCountryChange={this.handleCountryChange} />
                                 <Chart data={data} country={country}/>
